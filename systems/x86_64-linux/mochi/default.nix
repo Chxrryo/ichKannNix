@@ -95,11 +95,11 @@
      # GTK Themes
      (catppuccin-gtk.override {
        variant = "mocha";
-       accents = "peach";
+       accents = [ "peach" ];
      })
      (catppuccin-gtk.override {
        variant = "latte";
-       accents = "peach";
+       accents = [ "peach" ];
      })
      catppuccin-cursors.lattePeach
      catppuccin-cursors.mochaPeach
