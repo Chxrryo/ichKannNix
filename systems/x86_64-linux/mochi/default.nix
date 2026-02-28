@@ -74,9 +74,6 @@
     aspellDicts.en-science
     aspellDicts.en-computers
 
-    # ui
-    xdg-desktop-portal-gtk
-
     # Flatpak
     kdePackages.discover
     kdePackages.packagekit-qt
@@ -123,7 +120,14 @@
 
   # Flatpak aktivieren
   services.flatpak.enable = true;
-  xdg.portal.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      kdePackages.xdg-desktop-portal-kde
+    ];
+    config.common.default = "*";
+  };
 
   # GPU
   hardware.graphics = {
