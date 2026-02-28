@@ -125,5 +125,14 @@
   services.flatpak.enable = true;
   xdg.portal.enable = true;
 
+  # GPU
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+    extraPackages = with pkgs; [
+      rocmPackages.clr.icd
+    ];
+  };
+
   system.stateVersion = "26.05";
 }
