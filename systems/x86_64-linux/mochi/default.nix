@@ -128,6 +128,7 @@
     ];
     config.common.default = "*";
   };
+  fonts.fontDir.enable = true;
 
   # GPU
   hardware.graphics = {
