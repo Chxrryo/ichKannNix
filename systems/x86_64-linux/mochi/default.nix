@@ -68,6 +68,12 @@
     # other stuff
     git
 
+    # spelling
+    aspellDicts.de
+    aspellDicts.en
+    aspellDicts.en-science
+    aspellDicts.en-computers
+
     # ui
     xdg-desktop-portal-gtk
 
