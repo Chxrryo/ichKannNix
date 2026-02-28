@@ -68,6 +68,9 @@
     # other stuff
     git
 
+    # ui
+    xdg-desktop-portal-gtk
+
     # Flatpak
     kdePackages.discover
     kdePackages.packagekit-qt
