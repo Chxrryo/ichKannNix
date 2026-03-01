@@ -54,6 +54,9 @@
   # Enable XWayland
   programs.xwayland.enable = true;
 
+  #Enable kde_connect
+  programs.kdeconnect.enable = true;
+
   #MySQL aktivieren
   services.mysql = {
     enable = true;
