@@ -30,7 +30,7 @@
 	ExecStart="${pkgs.coreutils}/bin/echo 'off' > /sys/class/sound/ctl-led/mic/mode";
         Type="simple";
     };
-    wantedBy = ["multi-user.target"];
+    wantedBy = ["graphical.target"];
   };
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
