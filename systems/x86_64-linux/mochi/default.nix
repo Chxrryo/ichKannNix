@@ -6,6 +6,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./flatpak.nix
     ];
 
   # Bootloader.
@@ -96,10 +97,6 @@
     aspellDicts.en-science
     aspellDicts.en-computers
 
-    # Flatpak
-    kdePackages.discover
-    kdePackages.packagekit-qt
-
     # Cattpuccin
      (catppuccin-papirus-folders.override {
        flavor = "latte";
@@ -139,18 +136,6 @@
     "nix-command"
     "flakes"
   ];
-
-  # Flatpak aktivieren
-  services.flatpak.enable = true;
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      kdePackages.xdg-desktop-portal-kde
-    ];
-    config.common.default = "*";
-  };
-  fonts.fontDir.enable = true;
 
   # GPU
   hardware.graphics = {
