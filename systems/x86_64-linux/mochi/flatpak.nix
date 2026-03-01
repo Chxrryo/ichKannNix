@@ -8,14 +8,7 @@
 
     # Install and enable flatpak
     services.flatpak.enable = true;
-    xdg.portal = {
-      enable = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-gtk
-        kdePackages.xdg-desktop-portal-kde
-      ];
-      config.common.default = "*";
-    };
+    xdg.portal.enable = true;
 
     fonts.fontDir.enable = true;
     system.fsPackages = [ pkgs.bindfs ];
