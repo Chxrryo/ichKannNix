@@ -79,6 +79,11 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  #Add MySQLWorkbench
+  enviroment.systemPackages = with pkgs; [
+    mysql-workbench
+  ];
+
   environment.systemPackages = with pkgs; [
     # other stuff
     git
