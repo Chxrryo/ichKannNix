@@ -53,6 +53,12 @@
   # Enable XWayland
   programs.xwayland.enable = true;
 
+  #MySQL aktivieren
+  services.mysql = {
+    enable = true;
+    package = pkgs.mysql80;
+  };
+
   # Configure console keymap
   console.keyMap = "de";
 
