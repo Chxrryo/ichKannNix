@@ -20,6 +20,17 @@
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
+  systemd.services."mute-led-disable" = {
+    unitConfig = {
+      Description="Disables the annoying mute light on keyboard";
+      After="multi-user.target";
+    };
+    serviceConfig={
+	ExecStart="${pkgs.coreutils}/bin/echo 'off' > /sys/class/sound/ctl-led/mic/mode";
+        Type="simple";
+    };
+    wantedBy = "multi-user.target";
+  };
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
