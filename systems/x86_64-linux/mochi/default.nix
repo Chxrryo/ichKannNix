@@ -9,6 +9,7 @@
       ./hardware-configuration.nix
       ./flatpak.nix
       ./podmanconfig.nix
+      ./hardware-bluetooth-conf.nix
     ];
 
   # Bootloader.
