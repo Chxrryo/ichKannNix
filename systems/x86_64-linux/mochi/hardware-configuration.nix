@@ -12,7 +12,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-  boot.kernelParams = [ "acpi_osi=linux" ];
+  #boot.kernelParams = [ "acpi_osi=linux" ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/ecfbbc92-5ca7-4fca-9fc9-4e1f08f5f207";
