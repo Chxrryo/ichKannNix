@@ -1,3 +1,6 @@
+_:
+
+{
 virtualisation = {
   containers.enable = true;
   podman = {
@@ -12,4 +15,5 @@ users.users.lina = { # replace `<USERNAME>` with the actual username
   extraGroups = [
     "podman"
   ];
+};
 }
