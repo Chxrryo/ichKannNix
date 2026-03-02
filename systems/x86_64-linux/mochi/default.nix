@@ -1,5 +1,6 @@
 
 
+
 { config, pkgs, ... }:
 
 {
@@ -7,6 +8,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./flatpak.nix
+      ./podmanconfig.nix
     ];
 
   # Bootloader.
