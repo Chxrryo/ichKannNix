@@ -97,6 +97,7 @@
     # other stuff
     git
     mysql-workbench
+    android-tools #fuer android studio
     # spelling
     aspellDicts.de
     aspellDicts.en
