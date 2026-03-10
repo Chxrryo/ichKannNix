@@ -106,10 +106,10 @@
     aspellDicts.en-computers
 
     # Cattpuccin
-     (catppuccin-papirus-folders.override {
-       flavor = "latte";
-       accent = "peach";
-     })
+     #(catppuccin-papirus-folders.override {
+     #  flavor = "latte";
+     #  accent = "peach";
+     #})
      (catppuccin-papirus-folders.override {
        flavor = "mocha";
        accent = "peach";
