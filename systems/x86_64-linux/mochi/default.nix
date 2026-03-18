@@ -66,6 +66,13 @@
     package = pkgs.mysql80;
   };
 
+  #Lid Switch Manuell einstellen
+  services.logind = {
+  lidSwitch = "suspend";
+  lidSwitchOnExternalPower = "suspend";
+  };
+
+
   # Configure console keymap
   console.keyMap = "de";
 
