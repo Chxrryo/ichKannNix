@@ -68,9 +68,10 @@
 
   #Lid Switch Manuell einstellen
   services.logind = {
-  lidSwitch = "suspend";
-  lidSwitchOnExternalPower = "suspend";
+  settings.Login.HandleLidSwitch = "suspend";
+  settings.Login.HandleLidSwitchExternalPower = "suspend";
   };
+
 
 
   # Configure console keymap
