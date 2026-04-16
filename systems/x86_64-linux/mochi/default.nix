@@ -63,7 +63,7 @@
   #MySQL aktivieren
   services.mysql = {
     enable = true;
-    package = pkgs.mysql80;
+    package = pkgs.mysql84;
   };
 
   #Lid Switch Manuell einstellen
