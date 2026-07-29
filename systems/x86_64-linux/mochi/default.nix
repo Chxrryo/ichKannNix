@@ -59,7 +59,9 @@
 
   #Enable kde_connect
   programs.kdeconnect.enable = true;
-  programs.ausweisapp.openFirewall = true;
+
+  # Firewall ausweisapp
+  networking.firewall.allowedUDPPorts = [ 24727 ];
 
   #MySQL aktivieren
   services.mysql = {
