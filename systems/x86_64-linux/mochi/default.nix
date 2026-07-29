@@ -59,6 +59,7 @@
 
   #Enable kde_connect
   programs.kdeconnect.enable = true;
+  programs.ausweisapp.openFirewall = true;
 
   #MySQL aktivieren
   services.mysql = {
