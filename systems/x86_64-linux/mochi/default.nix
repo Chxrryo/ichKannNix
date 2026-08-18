@@ -23,7 +23,7 @@
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "Europe/Berlin";
+  time.timeZone = null;
 
   systemd.services."mute-led-disable" = {
     unitConfig = {
