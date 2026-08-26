@@ -70,10 +70,10 @@
   };
 
   #Lid Switch Manuell einstellen
-  services.logind = {
-  settings.Login.HandleLidSwitch = "suspend";
-  settings.Login.HandleLidSwitchExternalPower = "suspend";
-  };
+  #services.logind = {
+  #settings.Login.HandleLidSwitch = "suspend";
+  #settings.Login.HandleLidSwitchExternalPower = "suspend";
+  #};
 
 
 
