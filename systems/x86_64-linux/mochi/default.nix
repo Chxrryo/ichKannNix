@@ -1,16 +1,14 @@
-
-
-
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./flatpak.nix
-      ./podmanconfig.nix
-      ./hardware-bluetooth-conf.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./flatpak.nix
+    ./podmanconfig.nix
+    ./hardware-bluetooth-conf.nix
+    ./virtualisation.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -27,14 +25,14 @@
 
   systemd.services."mute-led-disable" = {
     unitConfig = {
-      Description="Disables the annoying mute light on keyboard";
-      After="multi-user.target";
+      Description = "Disables the annoying mute light on keyboard";
+      After = "multi-user.target";
     };
-    serviceConfig={
-	ExecStart="${pkgs.coreutils}/bin/echo 'off' > /sys/class/sound/ctl-led/mic/mode";
-        Type="simple";
+    serviceConfig = {
+      ExecStart = "${pkgs.coreutils}/bin/echo 'off' > /sys/class/sound/ctl-led/mic/mode";
+      Type = "simple";
     };
-    wantedBy = ["graphical.target"];
+    wantedBy = [ "graphical.target" ];
   };
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -75,8 +73,6 @@
   #settings.Login.HandleLidSwitchExternalPower = "suspend";
   #};
 
-
-
   # Configure console keymap
   console.keyMap = "de";
 
@@ -96,19 +92,22 @@
   users.users.lina = {
     isNormalUser = true;
     description = "Lina";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "libvirtd"
+      "kvm"
+      "networkmanager"
+      "wheel"
+    ];
   };
-
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
 
   environment.systemPackages = with pkgs; [
     # other stuff
     git
     mysql-workbench
-    android-tools #fuer android studio
+    android-tools # fuer android studio
     nextcloud-client
     # spelling
     aspellDicts.de
@@ -118,34 +117,37 @@
     python3Packages.mysql-connector
 
     # Cattpuccin
-     #(catppuccin-papirus-folders.override {
-     #  flavor = "latte";
-     #  accent = "peach";
-     #})
-     (catppuccin-papirus-folders.override {
-       flavor = "mocha";
-       accent = "peach";
-     })
-     # KDE Themes
-     (catppuccin-kde.override {
-       flavour = [ "mocha" "latte" ];
-       accents = [ "peach" ];
-       winDecStyles = [ "modern" ];
-     })
-     (catppuccin-sddm.override {
-       flavor = "mocha";
-     })
-     # GTK Themes
-     (catppuccin-gtk.override {
-       variant = "mocha";
-       accents = [ "peach" ];
-     })
-     (catppuccin-gtk.override {
-       variant = "latte";
-       accents = [ "peach" ];
-     })
-     catppuccin-cursors.lattePeach
-     catppuccin-cursors.mochaPeach
+    #(catppuccin-papirus-folders.override {
+    #  flavor = "latte";
+    #  accent = "peach";
+    #})
+    (catppuccin-papirus-folders.override {
+      flavor = "mocha";
+      accent = "peach";
+    })
+    # KDE Themes
+    (catppuccin-kde.override {
+      flavour = [
+        "mocha"
+        "latte"
+      ];
+      accents = [ "peach" ];
+      winDecStyles = [ "modern" ];
+    })
+    (catppuccin-sddm.override {
+      flavor = "mocha";
+    })
+    # GTK Themes
+    (catppuccin-gtk.override {
+      variant = "mocha";
+      accents = [ "peach" ];
+    })
+    (catppuccin-gtk.override {
+      variant = "latte";
+      accents = [ "peach" ];
+    })
+    catppuccin-cursors.lattePeach
+    catppuccin-cursors.mochaPeach
   ];
 
   programs.neovim.enable = true;
