@@ -104,9 +104,9 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    vscodium-fhs
     # other stuff
     git
-    flutter
     mysql-workbench
     android-tools # fuer android studio
     nextcloud-client
