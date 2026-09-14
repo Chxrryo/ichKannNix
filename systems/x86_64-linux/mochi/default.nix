@@ -106,6 +106,7 @@
   environment.systemPackages = with pkgs; [
     # other stuff
     git
+    flutter
     mysql-workbench
     android-tools # fuer android studio
     nextcloud-client
