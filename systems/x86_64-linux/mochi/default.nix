@@ -107,6 +107,7 @@
     vscodium-fhs
     # other stuff
     git
+    unzip
     mysql-workbench
     android-tools # fuer android studio
     nextcloud-client
