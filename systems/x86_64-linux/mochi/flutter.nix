@@ -3,8 +3,9 @@
 {
   programs.nix-ld = {
     enable = true;
-    libraries = [
-      pkgs.libx11
+    libraries = with pkgs; [
+      libx11
+      libpulseaudio
     ];
   };
   environment.systemPackages = with pkgs; [
