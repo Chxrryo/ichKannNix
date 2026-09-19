@@ -6,6 +6,7 @@
     libraries = with pkgs; [
       libx11
       libpulseaudio
+      gperftools
     ];
   };
   environment.systemPackages = with pkgs; [
