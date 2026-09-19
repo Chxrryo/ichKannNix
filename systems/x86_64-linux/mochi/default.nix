@@ -8,6 +8,7 @@
     ./podmanconfig.nix
     ./hardware-bluetooth-conf.nix
     ./virtualisation.nix
+    ./flutter.nix
   ];
 
   # Bootloader.
@@ -109,7 +110,6 @@
     git
     unzip
     mysql-workbench
-    android-tools # fuer android studio
     nextcloud-client
     # spelling
     aspellDicts.de
