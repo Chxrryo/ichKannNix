@@ -4,7 +4,7 @@
   programs.nix-ld = {
     enable = true;
     libraries = [
-      libx11
+      pkgs.libx11
     ];
   };
   environment.systemPackages = with pkgs; [
