@@ -5,9 +5,12 @@
     enable = true;
     libraries = with pkgs; [
       gperftools
+      androidenv.androidPkgs.androidsdk
+      libx11
+      libpulseaudio
+
       glibc
       libcxx
-      libpulseaudio
       libtiff
       libuuid
       zlib
@@ -22,7 +25,6 @@
       alsa-lib
       waylandpp.lib
       libgbm
-      libx11
       libxext
       libxdamage
       libxfixes
