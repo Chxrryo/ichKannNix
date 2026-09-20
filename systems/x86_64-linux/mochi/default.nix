@@ -8,7 +8,6 @@
     ./podmanconfig.nix
     ./hardware-bluetooth-conf.nix
     ./virtualisation.nix
-    ./flutter.nix
   ];
 
   # Bootloader.
@@ -106,6 +105,7 @@
 
   environment.systemPackages = with pkgs; [
     vscodium-fhs
+    android-studio
     # other stuff
     git
     unzip
