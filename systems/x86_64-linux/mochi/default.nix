@@ -109,7 +109,7 @@
     # other stuff
     git
     unzip
-    mysql-workbench
+    # mysql-workbench
     nextcloud-client
     # spelling
     aspellDicts.de
