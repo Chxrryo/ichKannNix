@@ -7,6 +7,7 @@
     ./flatpak.nix
     ./podmanconfig.nix
     ./hardware-bluetooth-conf.nix
+    ./tailscale.nix
     ./virtualisation.nix
   ];
 
