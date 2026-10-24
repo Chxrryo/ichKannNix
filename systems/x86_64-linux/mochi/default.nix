@@ -115,8 +115,6 @@
     # spelling
     aspellDicts.de
     aspellDicts.en
-    aspellDicts.en-science
-    aspellDicts.en-computers
     python3Packages.mysql-connector
 
     # Cattpuccin
