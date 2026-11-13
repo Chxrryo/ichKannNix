@@ -80,6 +80,12 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # fonts
+  fonts.packages = with pkgs; [
+    corefonts
+    nerd-fonts.liberation
+  ];
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -107,6 +113,20 @@
   environment.systemPackages = with pkgs; [
     vscodium-fhs
     android-studio
+
+    # latex
+    (pkgs.texlive.withPackages (
+      texPkgs: with texPkgs; [
+        scheme-medium
+        citation-style-language
+        luatex
+        minted
+        upquote
+        makecell
+        multirow
+      ]
+    ))
+
     # other stuff
     git
     unzip
