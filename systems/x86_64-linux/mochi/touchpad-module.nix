@@ -24,6 +24,7 @@ kernel.stdenv.mkDerivation {
 
   installPhase = ''
     make -C ${kernel.dev}/lib/modules/${kernel.modDirVersion}/build \
+      M=$(pwd)/${module} \
       INSTALL_MOD_PATH=$out \
       INSTALL_MOD_DIR=kernel/${module} \
       modules_install
