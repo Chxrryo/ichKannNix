@@ -1,0 +1,32 @@
+--- a/drivers/i2c/i2c-core-acpi.c
++++ b/drivers/i2c/i2c-core-acpi.c
+@@ -355,6 +355,19 @@ static const struct acpi_device_id i2c_a
+ 	{}
+ };
+ 
++static const struct acpi_device_id i2c_acpi_force_100khz_device_ids[] = {
++	/*
++	* These ELAN touchpads only work at 100KHz. When a 400KHz
++	* freq is used, the firmware appears to interperet that as a
++	* noisy signal and applies a smoothing algorithm, making the
++	* touchpad feel sluggish. Some devices' ACPI tables do not
++	* specify this requirement, and some I2C controllers default
++	* to 400KHz, so it is necessary to force the speed to 100KHz.
++	*/
++	{ "ELAN06FA", 0 },
++	{}
++};
++
+ static acpi_status i2c_acpi_lookup_speed(acpi_handle handle, u32 level,
+ 					  void *data, void **return_value)
+ {
+@@ -373,6 +386,9 @@ static acpi_status i2c_acpi_lookup_speed
+ 	if (acpi_match_device_ids(adev, i2c_acpi_force_400khz_device_ids) == 0)
+ 		lookup->force_speed = I2C_MAX_FAST_MODE_FREQ;
+ 
++	if (acpi_match_device_ids(adev, i2c_acpi_force_100khz_device_ids) == 0)
++		lookup->force_speed = I2C_MAX_STANDARD_MODE_FREQ;
++
+ 	return AE_OK;
+ }
+ 

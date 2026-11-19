@@ -9,6 +9,7 @@
     ./hardware-bluetooth-conf.nix
     ./tailscale.nix
     ./virtualisation.nix
+    ./touchpad-patch.nix
   ];
 
   # Bootloader.
