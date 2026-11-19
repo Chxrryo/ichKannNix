@@ -4,7 +4,7 @@
 }:
 
 let
-  module = "i2c";
+  module = "drivers/i2c";
 in
 kernel.stdenv.mkDerivation {
   pname = baseNameOf module;
